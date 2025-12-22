@@ -1,11 +1,11 @@
 export type field = {
-  name: string;
-  color: string;
-};
+    name: string;
+    color: string;
+  };
 export type CardType = {
-  id: number;
-  emoji: string;
-  matched: boolean;
+  id: number;        
+  emoji: string;     
+  matched: boolean;  
 };
 export type CardProps = {
   card: CardType;

@@ -12,9 +12,9 @@ export default function SelectLevel() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center", // מרכז אנכי
-        width: "100vw", // חשוב! כדי שהמרכז האופקי יעבוד
-        height: "100vh", // גובה מלא של המסך
+        justifyContent: "center", 
+        width: "100vw", 
+        height: "100vh", 
         fontFamily: "Arial, sans-serif",
         textAlign: "center",
       }}

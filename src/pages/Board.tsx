@@ -2,14 +2,9 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Card from "../components/Card";
-import type { CardType } from "../components/Card";
+import type { CardType, ScoreType } from "../types/fieldTypes";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-type ScoreType = {
-  moves: number;
-  time: number;
-};
 
 export default function Board() {
   const { search } = useLocation();
@@ -143,7 +138,7 @@ export default function Board() {
         position: "top-center",
         autoClose: 3000,
         theme: "colored",
-        onClose: () => navigate("/"), 
+        onClose: () => navigate("/"),
       });
 
       const newScore: ScoreType = { moves, time };
@@ -225,7 +220,7 @@ export default function Board() {
               level === "hard"
                 ? "repeat(6, minmax(0, 80px))"
                 : level === "medium"
-                ? "repeat(5, minmax(0, 100px))" 
+                ? "repeat(5, minmax(0, 100px))"
                 : "repeat(4, minmax(0, 120px))",
           }}
         >

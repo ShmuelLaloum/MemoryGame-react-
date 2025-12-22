@@ -1,15 +1,4 @@
-export type CardType = {
-  id: number;        
-  emoji: string;     
-  matched: boolean;  
-};
-
-
-type CardProps = {
-  card: CardType;
-  handleClick: (card: CardType) => void;
-  flipped: boolean;
-};
+import type { CardProps } from "../types/fieldTypes";
 
 export default function Card({ card, handleClick, flipped }: CardProps) {
   return (

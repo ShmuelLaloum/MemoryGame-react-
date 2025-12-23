@@ -1,4 +1,4 @@
-export type field = {
+export type Field = {
     name: string;
     color: string;
   };

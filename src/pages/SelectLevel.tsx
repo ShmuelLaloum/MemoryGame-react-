@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import type { field } from "../types/fieldTypes";
+import type { Field } from "../types/fieldTypes";
 export default function SelectLevel() {
-  const fields: field[] = [
+  const fields: Field[] = [
     { name: "easy", color: "#51cf66" },
     { name: "medium", color: "#ffa94d" },
     { name: "hard", color: "#ff6b6b" },

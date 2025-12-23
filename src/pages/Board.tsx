@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect , useCallback } from "react";
 import Card from "../components/Card";
 import type { CardType, ScoreType } from "../types/fieldTypes";
 import { ToastContainer, toast } from "react-toastify";
@@ -107,12 +107,13 @@ export default function Board() {
     else setChoiceTwo(card);
   }
 
-  function resetTurn() {
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setMoves((prev) => prev + 1);
-    setDisabled(false);
-  }
+  const resetTurn = useCallback(() => {
+  setChoiceOne(null);
+  setChoiceTwo(null);
+  setMoves((prev) => prev + 1);
+  setDisabled(false);
+}, []);
+
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {

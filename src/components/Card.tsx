@@ -1,23 +1,17 @@
 import type { CardProps } from "../types/fieldTypes";
+import "../styles/MemoryGame.css"
 
 export default function Card({ card, handleClick, flipped }: CardProps) {
   return (
     <div
-      onClick={() => handleClick(card)}
-      style={{
-        width: "60px",
-        height: "80px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "2rem",
-        cursor: flipped || card.matched ? "default" : "pointer",
-        backgroundColor: flipped || card.matched ? "#fff" : "#555",
-        border: "2px solid #000",
-        borderRadius: "5px",
-        margin: "5px",
-        userSelect: "none",
+      onClick={() => {
+        if (!flipped && !card.matched) {
+          handleClick(card);
+        }
       }}
+      className={`card ${flipped ? "flipped" : ""} ${
+        card.matched ? "matched" : ""
+      }`}
     >
       {flipped || card.matched ? card.emoji : "❓"}
     </div>

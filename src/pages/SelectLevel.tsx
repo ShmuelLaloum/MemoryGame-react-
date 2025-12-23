@@ -25,9 +25,9 @@ export default function SelectLevel() {
       <p style={{ fontSize: "18px", marginBottom: "20px" }}>Choose level:</p>
 
       <div style={{ display: "flex", gap: "15px" }}>
-        {fields.map((field, index) => (
+        {fields.map((field) => (
           <Link
-            key={index}
+            key={field.name}
             to={`/Board?level=${field.name}`}
             style={{
               padding: "10px 20px",

@@ -6,7 +6,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<SelectLevel />} />
-        <Route path="/Board" element={<Board />} />
+        <Route path="/board" element={<Board />} />
       </Routes>
     </Router>
   );

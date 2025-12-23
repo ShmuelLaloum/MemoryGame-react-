@@ -148,7 +148,8 @@ export default function Board() {
         if (
           !currentLevelScore ||
           newScore.moves < currentLevelScore.moves ||
-          newScore.time < currentLevelScore.time
+          (newScore.moves === currentLevelScore.moves &&
+            newScore.time < currentLevelScore.time)
         ) {
           const updatedScores = { ...prev, [level]: newScore };
           localStorage.setItem("highScores", JSON.stringify(updatedScores));
@@ -237,7 +238,9 @@ export default function Board() {
                 card={card}
                 handleClick={handleChoice}
                 flipped={
-                  card === choiceOne || card === choiceTwo || card.matched
+                  card.id === choiceOne?.id ||
+                  card.id === choiceTwo?.id ||
+                  card.matched
                 }
               />
             </div>
